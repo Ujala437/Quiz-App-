@@ -6,51 +6,59 @@
 
     <title>Quizora | Professional Quiz App</title>
 
+    <meta name="theme-color" content="#7057e8">
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="navbar">
     <div class="logo">⚡ Quizora</div>
 
     <div class="nav-right">
-        <span class="live-badge">● LIVE QUIZ</span>
-        <button id="themeBtn" aria-label="Toggle theme">🌙</button>
+        <span class="live-badge">
+            <span class="live-dot"></span> LIVE QUIZ
+        </span>
+
+        <button id="themeBtn" class="theme-btn"
+                aria-label="Toggle dark mode">🌙</button>
     </div>
 </header>
 
 <main class="container">
 
-    <section class="welcome">
+    <section class="hero">
         <p class="eyebrow">LEARN • PRACTICE • ACHIEVE</p>
 
         <h1>Challenge Your <span>Knowledge.</span></h1>
 
-        <p class="subtitle">
-            Practice every day. Improve your skills. Become unstoppable.
+        <p class="hero-description">
+            Practice every day. Improve your skills.
+            Become unstoppable.
         </p>
     </section>
 
     <section class="stats">
 
         <div class="stat-card">
-            <div class="stat-icon purple">📚</div>
+            <div class="stat-icon books">📚</div>
             <div>
                 <p>Questions Answered</p>
-                <h2 id="totalAnswered">0</h2>
+                <h2 id="answered">0</h2>
             </div>
         </div>
 
         <div class="stat-card">
-            <div class="stat-icon green">🎯</div>
+            <div class="stat-icon target">🎯</div>
             <div>
                 <p>Total Score</p>
-                <h2 id="scoreDisplay">0</h2>
+                <h2 id="score">0</h2>
             </div>
         </div>
 
         <div class="stat-card">
-            <div class="stat-icon orange">⏱️</div>
+            <div class="stat-icon clock">⏱️</div>
             <div>
                 <p>Time Left</p>
                 <h2 id="timer">05:00</h2>
@@ -59,32 +67,36 @@
 
     </section>
 
-    <section class="quiz-layout">
+    <section class="dashboard">
 
         <aside class="sidebar">
 
-            <h3>Quiz Categories</h3>
-            <p class="side-text">Choose your subject</p>
+            <h2>Quiz Categories</h2>
+            <p class="muted">Choose your subject</p>
 
-            <button class="category active" data-category="HTML">
-                <span>🌐</span> HTML
-            </button>
+            <div class="categories">
 
-            <button class="category" data-category="CSS">
-                <span>🎨</span> CSS
-            </button>
+                <button class="category active" data-category="HTML">
+                    <span>🌐</span> HTML
+                </button>
 
-            <button class="category" data-category="JavaScript">
-                <span>⚡</span> JavaScript
-            </button>
+                <button class="category" data-category="CSS">
+                    <span>🎨</span> CSS
+                </button>
 
-            <button class="category" data-category="C++">
-                <span>💻</span> C++ Programming
-            </button>
+                <button class="category" data-category="JavaScript">
+                    <span>⚡</span> JavaScript
+                </button>
+
+                <button class="category" data-category="C++">
+                    <span>💻</span> C++ Programming
+                </button>
+
+            </div>
 
             <div class="tip-card">
-                <span>💡</span>
-                <h4>Daily Tip</h4>
+                <div class="tip-icon">💡</div>
+                <h3>Daily Tip</h3>
                 <p>
                     Small daily improvements lead to big results.
                     Keep learning!
@@ -95,80 +107,59 @@
 
         <section class="quiz-card">
 
-            <div id="quizScreen">
+            <div class="quiz-top">
+                <span id="roundLabel">HTML • ROUND 1</span>
+                <span id="questionCount">QUESTION 1</span>
+            </div>
 
-                <div class="quiz-top">
-                    <span id="categoryLabel">HTML QUIZ</span>
-                    <span id="questionNumber">QUESTION 1</span>
-                </div>
+            <div class="progress-track">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
 
-                <div class="progress-track">
-                    <div id="progressBar"></div>
-                </div>
+            <div id="quizArea">
 
                 <h2 id="question">Loading question...</h2>
 
                 <div id="options" class="options"></div>
 
-                <p id="feedback" aria-live="polite"></p>
+                <div id="feedback" class="feedback"
+                     aria-live="polite"></div>
 
-                <div class="quiz-footer">
-                    <span id="answeredCount">0 answered</span>
+                <div class="quiz-bottom">
+                    <span id="answeredLabel">0 questions answered</span>
 
-                    <button id="nextBtn" disabled>
+                    <button id="nextBtn" class="primary-btn" disabled>
                         Next Question →
                     </button>
                 </div>
 
             </div>
 
-            <div id="resultScreen" hidden>
-
-                <div class="result-icon" id="resultIcon">🏆</div>
-
-                <p class="eyebrow">ROUND COMPLETED</p>
-
-                <h2 id="resultTitle">Excellent Work!</h2>
-
-                <p id="resultMessage">
-                    Here is your performance.
-                </p>
+            <div id="resultArea" class="result-area" hidden>
+                <div class="result-emoji">🏆</div>
+                <h2>Quiz Completed!</h2>
+                <p id="resultMessage">Great job!</p>
 
                 <div class="result-score">
-                    <span id="finalScore">0/0</span>
-                    <p id="percentage">0% Accuracy</p>
+                    <span>Your Score</span>
+                    <strong id="finalScore">0</strong>
                 </div>
 
-                <div class="result-details">
-
-                    <div>
-                        <span>✅ Correct</span>
-                        <h3 id="correctCount">0</h3>
-                    </div>
-
-                    <div>
-                        <span>❌ Incorrect</span>
-                        <h3 id="wrongCount">0</h3>
-                    </div>
-
-                </div>
-
-                <button id="restartBtn" class="restart-btn">
-                    ↻ Start New Round
+                <button id="restartBtn" class="primary-btn">
+                    Play Again ↻
                 </button>
-
             </div>
 
         </section>
 
     </section>
 
-    <footer>
-        <p>Designed with 💜 by <strong>Ujala</strong></p>
-        <p>© 2026 Quizora | Keep Learning Every Day</p>
-    </footer>
-
 </main>
+
+<footer>
+    <p>Designed with 💜 by <strong>Ujala</strong></p>
+    <p>© 2026 Quizora | Keep Learning Every Day</p>
+</footer>
 
 <script src="script.js"></script>
 
