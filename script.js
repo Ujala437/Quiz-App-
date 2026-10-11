@@ -1,520 +1,402 @@
-// ======================================
-// QUIZORA - PROFESSIONAL QUIZ APPLICATION
-// ======================================
+"use strict";
+
+// ===================================
+// QUIZORA - PROFESSIONAL QUIZ APP
+// ===================================
 
 const questionBank = {
 
     HTML: [
         {
-            question: "What does HTML stand for?",
-            options: [
-                "Hyper Text Markup Language",
-                "High Text Machine Language",
-                "Hyper Transfer Markup Language",
-                "Home Tool Markup Language"
-            ],
-            answer: 0
+            q: "Which HTML attribute provides alternative text for an image?",
+            o: ["alt", "name", "title", "text"],
+            a: 0
         },
         {
-            question: "Which tag creates a hyperlink?",
-            options: ["<link>", "<a>", "<href>", "<url>"],
-            answer: 1
+            q: "Which tag is used to create a hyperlink?",
+            o: ["<link>", "<a>", "<href>", "<url>"],
+            a: 1
         },
         {
-            question: "Which tag creates the largest heading?",
-            options: ["<h6>", "<head>", "<h1>", "<heading>"],
-            answer: 2
+            q: "Which tag creates the largest heading?",
+            o: ["<h6>", "<head>", "<h1>", "<heading>"],
+            a: 2
         },
         {
-            question: "Which tag inserts an image?",
-            options: ["<image>", "<picture>", "<img>", "<src>"],
-            answer: 2
+            q: "Which tag is used to insert an image?",
+            o: ["<image>", "<picture>", "<img>", "<src>"],
+            a: 2
         },
         {
-            question: "Which attribute provides alternative text for an image?",
-            options: ["title", "alt", "name", "text"],
-            answer: 1
+            q: "Which HTML tag creates an unordered list?",
+            o: ["<ol>", "<ul>", "<li>", "<list>"],
+            a: 1
         },
         {
-            question: "Which tag creates an ordered list?",
-            options: ["<ul>", "<li>", "<dl>", "<ol>"],
-            answer: 3
+            q: "Which attribute specifies a link destination?",
+            o: ["src", "href", "link", "action"],
+            a: 1
         },
         {
-            question: "Which tag creates a table row?",
-            options: ["<td>", "<tr>", "<th>", "<table-row>"],
-            answer: 1
+            q: "Which tag creates a line break?",
+            o: ["<break>", "<lb>", "<br>", "<line>"],
+            a: 2
         },
         {
-            question: "Which attribute makes an input field mandatory?",
-            options: ["validate", "required", "mandatory", "must"],
-            answer: 1
+            q: "Which HTML element creates a form?",
+            o: ["<input>", "<form>", "<fieldset>", "<button>"],
+            a: 1
         },
         {
-            question: "Which tag connects an external CSS file?",
-            options: ["<style>", "<css>", "<link>", "<script>"],
-            answer: 2
+            q: "Which input type hides typed characters?",
+            o: ["text", "hidden", "password", "private"],
+            a: 2
         },
         {
-            question: "Which HTML element creates a paragraph?",
-            options: ["<para>", "<p>", "<text>", "<pg>"],
-            answer: 1
+            q: "Which tag defines a table row?",
+            o: ["<td>", "<th>", "<tr>", "<table-row>"],
+            a: 2
         },
         {
-            question: "Which tag creates a line break?",
-            options: ["<break>", "<br>", "<lb>", "<line>"],
-            answer: 1
+            q: "Which declaration defines an HTML5 document?",
+            o: ["<html5>", "<!DOCTYPE html>", "<doctype>", "<document>"],
+            a: 1
         },
         {
-            question: "Which attribute specifies a unique element ID?",
-            options: ["class", "name", "id", "style"],
-            answer: 2
+            q: "Which tag is used for a paragraph?",
+            o: ["<para>", "<p>", "<text>", "<pg>"],
+            a: 1
         },
         {
-            question: "Which input type creates a checkbox?",
-            options: [
-                '<input type="checkbox">',
-                "<checkbox>",
-                "<check>",
-                '<input type="check">'
-            ],
-            answer: 0
+            q: "Which attribute gives an element a unique identifier?",
+            o: ["class", "name", "id", "key"],
+            a: 2
         },
         {
-            question: "Which tag defines a navigation section?",
-            options: ["<navigate>", "<nav>", "<navigation>", "<menuitem>"],
-            answer: 1
+            q: "Which tag is used to play video in HTML5?",
+            o: ["<media>", "<movie>", "<video>", "<play>"],
+            a: 2
         },
         {
-            question: "Which attribute opens a link in a new tab?",
-            options: ["newtab", "open", 'target="_blank"', "tab"],
-            answer: 2
-        },
-        {
-            question: "Which tag defines the main content of a page?",
-            options: ["<main>", "<bodytext>", "<content>", "<sectiononly>"],
-            answer: 0
-        },
-        {
-            question: "Which tag is used to play video?",
-            options: ["<media>", "<movie>", "<video>", "<play>"],
-            answer: 2
-        },
-        {
-            question: "Which tag defines a table header cell?",
-            options: ["<td>", "<tr>", "<th>", "<theadcell>"],
-            answer: 2
-        },
-        {
-            question: "Which tag creates a numbered list item?",
-            options: ["<ol>", "<li>", "<ul>", "<item>"],
-            answer: 1
-        },
-        {
-            question: "Which semantic tag represents the footer of a page or section?",
-            options: ["<bottom>", "<end>", "<footer>", "<last>"],
-            answer: 2
+            q: "Which tag contains page metadata?",
+            o: ["<body>", "<meta>", "<head>", "<footer>"],
+            a: 2
         }
     ],
 
     CSS: [
         {
-            question: "What does CSS stand for?",
-            options: [
-                "Creative Style Sheets",
+            q: "What does CSS stand for?",
+            o: [
+                "Computer Style Sheets",
                 "Cascading Style Sheets",
-                "Computer Style System",
+                "Creative Style System",
                 "Colorful Style Sheets"
             ],
-            answer: 1
+            a: 1
         },
         {
-            question: "Which property changes text color?",
-            options: ["font-color", "text-color", "color", "background"],
-            answer: 2
+            q: "Which property changes text color?",
+            o: ["font-color", "text-color", "color", "background"],
+            a: 2
         },
         {
-            question: "Which symbol selects an element by ID?",
-            options: [".", "#", "*", "&"],
-            answer: 1
+            q: "Which property changes the background color?",
+            o: ["color", "background-color", "bgcolor", "background-text"],
+            a: 1
         },
         {
-            question: "Which property changes background color?",
-            options: ["bgcolor", "background-color", "color", "background-text"],
-            answer: 1
+            q: "Which symbol selects a class in CSS?",
+            o: ["#", ".", "*", "@"],
+            a: 1
         },
         {
-            question: "Which CSS layout system is one-dimensional?",
-            options: ["Grid", "Flexbox", "Float", "Position"],
-            answer: 1
+            q: "Which symbol selects an ID in CSS?",
+            o: [".", "#", "&", "$"],
+            a: 1
         },
         {
-            question: "Which property makes text bold?",
-            options: ["font-weight", "font-style", "text-bold", "bold"],
-            answer: 0
+            q: "Which property controls text size?",
+            o: ["text-size", "font-style", "font-size", "size"],
+            a: 2
         },
         {
-            question: "Which property adds space inside an element's border?",
-            options: ["margin", "padding", "outline", "gap"],
-            answer: 1
+            q: "Which CSS layout system is one-dimensional?",
+            o: ["Grid", "Flexbox", "Table", "Float"],
+            a: 1
         },
         {
-            question: "Which selector targets all paragraph elements?",
-            options: ["#p", ".p", "p", "*p"],
-            answer: 2
+            q: "Which property adds space inside an element?",
+            o: ["margin", "padding", "border", "gap"],
+            a: 1
         },
         {
-            question: "Which property rounds element corners?",
-            options: ["corner-style", "border-round", "border-radius", "round"],
-            answer: 2
+            q: "Which property adds space outside an element?",
+            o: ["padding", "spacing", "margin", "outline"],
+            a: 2
         },
         {
-            question: "Which rule is used for responsive layouts?",
-            options: ["@responsive", "@media", "@screen-size", "@mobile"],
-            answer: 1
+            q: "Which property rounds element corners?",
+            o: ["corner", "border-round", "border-radius", "round"],
+            a: 2
         },
         {
-            question: "Which property changes the text size?",
-            options: ["text-size", "font-size", "size", "font-style"],
-            answer: 1
+            q: "Which property makes text bold?",
+            o: ["font-weight", "font-bold", "text-weight", "bold"],
+            a: 0
         },
         {
-            question: "Which property controls transparency?",
-            options: ["visibility", "transparent", "opacity", "display"],
-            answer: 2
+            q: "Which CSS unit is relative to the root font size?",
+            o: ["px", "em", "rem", "vh"],
+            a: 2
         },
         {
-            question: "Which position value fixes an element relative to the viewport?",
-            options: ["static", "relative", "fixed", "normal"],
-            answer: 2
+            q: "Which property controls an element's transparency?",
+            o: ["visibility", "opacity", "transparent", "display"],
+            a: 1
         },
         {
-            question: "Which property adds a shadow around a box?",
-            options: ["text-shadow", "box-shadow", "element-shadow", "shadow-box"],
-            answer: 1
+            q: "Which at-rule is used for responsive design?",
+            o: ["@screen", "@responsive", "@media", "@device"],
+            a: 2
         },
         {
-            question: "Which unit is relative to the root font size?",
-            options: ["px", "em", "rem", "vh"],
-            answer: 2
-        },
-        {
-            question: "Which property controls the space between grid cells?",
-            options: ["spacing", "gap", "cell-space", "margin-cell"],
-            answer: 1
-        },
-        {
-            question: "Which property aligns flex items along the main axis?",
-            options: ["align-items", "justify-content", "text-align", "float"],
-            answer: 1
-        },
-        {
-            question: "Which property controls the stacking order of positioned elements?",
-            options: ["stack", "layer", "z-index", "order-index"],
-            answer: 2
-        },
-        {
-            question: "Which pseudo-class applies when an element is hovered over?",
-            options: [":focus", ":active", ":hover", ":visited"],
-            answer: 2
-        },
-        {
-            question: "Which property controls how content exceeding an element's box is handled?",
-            options: ["overflow", "content-fit", "box-size", "wrap"],
-            answer: 0
+            q: "Which property controls the space between grid items?",
+            o: ["margin", "padding", "gap", "spacing"],
+            a: 2
         }
     ],
 
     JavaScript: [
         {
-            question: "Which keyword declares a reassignable block-scoped variable?",
-            options: ["const", "let", "static", "define"],
-            answer: 1
+            q: "Which keyword declares a block-scoped variable?",
+            o: ["var", "let", "define", "dim"],
+            a: 1
         },
         {
-            question: "Which method displays a message in the console?",
-            options: ["print()", "display()", "console.log()", "writeConsole()"],
-            answer: 2
+            q: "Which method displays a message in the browser console?",
+            o: ["console.log()", "print()", "display()", "message()"],
+            a: 0
         },
         {
-            question: "Which operator checks strict equality?",
-            options: ["=", "==", "===", "!="],
-            answer: 2
+            q: "Which operator checks strict equality?",
+            o: ["=", "==", "===", "!="],
+            a: 2
         },
         {
-            question: "Which method selects an element by its ID?",
-            options: [
-                "document.getElementById()",
-                "document.getClass()",
-                "document.selectId()",
-                "window.getId()"
+            q: "Which method selects an element by its ID?",
+            o: [
+                "getElementById()",
+                "getByClass()",
+                "queryId()",
+                "selectId()"
             ],
-            answer: 0
+            a: 0
         },
         {
-            question: "Which event occurs when a user clicks an element?",
-            options: ["onchange", "onhover", "onclick", "onload"],
-            answer: 2
+            q: "Which keyword declares a constant?",
+            o: ["var", "let", "const", "static"],
+            a: 2
         },
         {
-            question: "Which array method adds an item to the end?",
-            options: ["pop()", "push()", "shift()", "remove()"],
-            answer: 1
+            q: "Which method adds an element to the end of an array?",
+            o: ["pop()", "push()", "shift()", "join()"],
+            a: 1
         },
         {
-            question: "Which keyword declares a function?",
-            options: ["method", "func", "function", "create"],
-            answer: 2
+            q: "Which event occurs when a user clicks a button?",
+            o: ["change", "hover", "click", "load"],
+            a: 2
         },
         {
-            question: "Which value represents an intentional absence of a value?",
-            options: ["null", "true", "1", "false only"],
-            answer: 0
+            q: "Which value represents no assigned value?",
+            o: ["false", "0", "undefined", "NaN"],
+            a: 2
         },
         {
-            question: "Which loop runs while its condition is true?",
-            options: ["if", "while", "switch", "case"],
-            answer: 1
+            q: "Which loop executes while a condition is true?",
+            o: ["if", "while", "switch", "case"],
+            a: 1
         },
         {
-            question: "Which method parses a JSON string?",
-            options: [
+            q: "Which method converts JSON text into a JavaScript value?",
+            o: [
                 "JSON.stringify()",
                 "JSON.parse()",
                 "JSON.convert()",
                 "JSON.read()"
             ],
-            answer: 1
+            a: 1
         },
         {
-            question: "Which keyword declares a constant?",
-            options: ["let", "var", "const", "static"],
-            answer: 2
+            q: "Which keyword is used to define a function?",
+            o: ["func", "function", "method", "define"],
+            a: 1
         },
         {
-            question: "Which method adds an event listener?",
-            options: [
-                "addEventListener()",
-                "addEvent()",
-                "listenEvent()",
-                "onEvent()"
+            q: "Which array method creates a new array by transforming items?",
+            o: ["map()", "find()", "pop()", "includes()"],
+            a: 0
+        },
+        {
+            q: "Which operator represents logical AND?",
+            o: ["||", "!", "&&", "&="],
+            a: 2
+        },
+        {
+            q: "Which method selects the first matching CSS selector?",
+            o: [
+                "getElement()",
+                "querySelector()",
+                "selectFirst()",
+                "findElement()"
             ],
-            answer: 0
+            a: 1
         },
         {
-            question: "What does typeof return?",
-            options: [
-                "The variable's value",
-                "The type of a value",
-                "The variable's name",
-                "The value's length"
-            ],
-            answer: 1
-        },
-        {
-            question: "Which method removes the last array item?",
-            options: ["shift()", "pop()", "push()", "slice()"],
-            answer: 1
-        },
-        {
-            question: "Which of these is a Boolean value?",
-            options: ['"true"', "1 only", "true", '"yes"'],
-            answer: 2
-        },
-        {
-            question: "Which operator means logical AND?",
-            options: ["||", "&&", "!", "&|"],
-            answer: 1
-        },
-        {
-            question: "Which method converts an array to a string with separators?",
-            options: ["join()", "merge()", "combine()", "append()"],
-            answer: 0
-        },
-        {
-            question: "Which keyword handles an error-catching block?",
-            options: ["check", "catch", "error", "handle"],
-            answer: 1
-        },
-        {
-            question: "Which method converts a JSON value into a JSON string?",
-            options: [
-                "JSON.parse()",
-                "JSON.stringify()",
-                "JSON.convert()",
-                "JSON.toObject()"
-            ],
-            answer: 1
-        },
-        {
-            question: "Which method selects the first element matching a CSS selector?",
-            options: [
-                "document.querySelector()",
-                "document.getFirst()",
-                "document.selectFirst()",
-                "document.findElement()"
-            ],
-            answer: 0
+            q: "Which keyword waits for a Promise inside an async function?",
+            o: ["wait", "defer", "await", "pause"],
+            a: 2
         }
     ],
 
     "C++": [
         {
-            question: "Who developed C++?",
-            options: [
+            q: "Who developed the C++ programming language?",
+            o: [
                 "Dennis Ritchie",
-                "James Gosling",
                 "Bjarne Stroustrup",
+                "James Gosling",
                 "Guido van Rossum"
             ],
-            answer: 2
+            a: 1
         },
         {
-            question: "Which symbol ends a C++ statement?",
-            options: [".", ":", ";", ","],
-            answer: 2
+            q: "Which symbol ends a C++ statement?",
+            o: [":", ".", ";", ","],
+            a: 2
         },
         {
-            question: "Which header is commonly used for cout and cin?",
-            options: ["<stdio.h>", "<iostream>", "<string.h>", "<math.h>"],
-            answer: 1
+            q: "Which function is the usual entry point of a C++ program?",
+            o: ["start()", "run()", "main()", "begin()"],
+            a: 2
         },
         {
-            question: "Which operator sends output to cout?",
-            options: [">>", "<<", "==", "&&"],
-            answer: 1
+            q: "Which header is commonly used for cout and cin?",
+            o: ["<stdio.h>", "<iostream>", "<string>", "<fstream>"],
+            a: 1
         },
         {
-            question: "Which keyword creates a class?",
-            options: ["object", "structonly", "class", "define"],
-            answer: 2
+            q: "Which operator inserts output into cout?",
+            o: ["<<", ">>", "<>", "&&"],
+            a: 0
         },
         {
-            question: "Which loop executes its body at least once?",
-            options: ["for", "while", "do-while", "range-for"],
-            answer: 2
+            q: "Which operator extracts input from cin?",
+            o: ["<<", ">>", "==", "::"],
+            a: 1
         },
         {
-            question: "Which access specifier is the default in a C++ class?",
-            options: ["public", "private", "protected", "global"],
-            answer: 1
+            q: "Which keyword creates a class?",
+            o: ["object", "structclass", "class", "newclass"],
+            a: 2
         },
         {
-            question: "Which operator accesses a member through an object?",
-            options: ["-> only", ".", "::", "#"],
-            answer: 1
+            q: "Which concept allows one interface to have multiple forms?",
+            o: ["Inheritance", "Polymorphism", "Compilation", "Encapsulation"],
+            a: 1
         },
         {
-            question: "What allows the same function name with different parameters?",
-            options: [
-                "Function overloading",
-                "Encapsulation",
-                "Compilation",
-                "Iteration"
-            ],
-            answer: 0
+            q: "Which access specifier allows access from anywhere permitted by the object?",
+            o: ["private", "protected", "public", "internal"],
+            a: 2
         },
         {
-            question: "Which keyword declares a constant variable?",
-            options: ["fixed", "static", "const", "constant"],
-            answer: 2
+            q: "Which loop executes its body at least once?",
+            o: ["for", "while", "do-while", "range-for"],
+            a: 2
         },
         {
-            question: "Which keyword allocates an object dynamically?",
-            options: ["create", "malloc only", "new", "object"],
-            answer: 2
+            q: "Which operator is used to access a class member through an object?",
+            o: ["->", ".", "::", "&"],
+            a: 1
         },
         {
-            question: "Which operator compares two values for equality?",
-            options: ["=", "==", "=>", ":="],
-            answer: 1
+            q: "Which concept creates a new class from an existing class?",
+            o: ["Overloading", "Inheritance", "Abstraction", "Casting"],
+            a: 1
         },
         {
-            question: "Which loop is useful when the iteration count is known?",
-            options: ["for", "if", "switch", "goto"],
-            answer: 0
+            q: "Which keyword can be used to create a constant variable?",
+            o: ["fixed", "constant", "const", "unchange"],
+            a: 2
         },
         {
-            question: "Which OOP concept bundles data and methods together?",
-            options: ["Encapsulation", "Iteration", "Compilation", "Casting"],
-            answer: 0
+            q: "Which feature allows the same function name with different parameters?",
+            o: ["Overriding", "Overloading", "Inheritance", "Recursion"],
+            a: 1
         },
         {
-            question: "Which symbol is used for inheritance in C++ class declarations?",
-            options: ["extends", "inherits", ":", "implements"],
-            answer: 2
-        },
-        {
-            question: "Which operator accesses a member through a pointer?",
-            options: [".", "->", "::", "&&"],
-            answer: 1
-        },
-        {
-            question: "Which function is the usual entry point of a C++ program?",
-            options: ["start()", "run()", "main()", "begin()"],
-            answer: 2
-        },
-        {
-            question: "Which feature allows one interface to have different implementations?",
-            options: ["Polymorphism", "Compilation", "Iteration", "Declaration"],
-            answer: 0
-        },
-        {
-            question: "Which keyword is used to return a value from a function?",
-            options: ["send", "return", "output", "break"],
-            answer: 1
-        },
-        {
-            question: "Which operator accesses a scope such as a class member?",
-            options: [".", "->", "::", "#"],
-            answer: 2
+            q: "Which operator is used to get the address of a variable?",
+            o: ["*", "&", "%", "#"],
+            a: 1
         }
     ]
 };
 
 
-// ======================================
-// DOM ELEMENTS
-// ======================================
+// ===================================
+// ELEMENTS
+// ===================================
 
-const questionEl = document.getElementById("question");
-const optionsEl = document.getElementById("options");
-const questionNumberEl = document.getElementById("questionNumber");
-const categoryLabelEl = document.getElementById("categoryLabel");
-const progressBar = document.getElementById("progressBar");
-const answeredCountEl = document.getElementById("answeredCount");
-const scoreDisplay = document.getElementById("scoreDisplay");
-const totalAnsweredEl = document.getElementById("totalAnswered");
-const timerEl = document.getElementById("timer");
-const feedbackEl = document.getElementById("feedback");
+const questionElement = document.getElementById("question");
+const optionsElement = document.getElementById("options");
 const nextBtn = document.getElementById("nextBtn");
-const quizScreen = document.getElementById("quizScreen");
-const resultScreen = document.getElementById("resultScreen");
+const restartBtn = document.getElementById("restartBtn");
+const themeBtn = document.getElementById("themeBtn");
+
+const answeredElement = document.getElementById("answered");
+const scoreElement = document.getElementById("score");
+const timerElement = document.getElementById("timer");
+
+const questionCount = document.getElementById("questionCount");
+const roundLabel = document.getElementById("roundLabel");
+const progressBar = document.getElementById("progressBar");
+const answeredLabel = document.getElementById("answeredLabel");
+const feedback = document.getElementById("feedback");
+
+const quizArea = document.getElementById("quizArea");
+const resultArea = document.getElementById("resultArea");
+
+const finalScore = document.getElementById("finalScore");
+const resultMessage = document.getElementById("resultMessage");
+
+const categoryButtons = document.querySelectorAll(".category");
 
 
-// ======================================
-// QUIZ VARIABLES
-// ======================================
+// ===================================
+// GAME STATE
+// ===================================
 
 let currentCategory = "HTML";
-let questions = [];
-let currentIndex = 0;
-let score = 0;
-let correctCount = 0;
-let wrongCount = 0;
-let totalAnswered = 0;
-let roundNumber = 1;
+let currentQuestion = null;
 
-let answered = false;
+let answered = 0;
+let score = 0;
+let round = 1;
+
+let selectedAnswer = false;
 let quizFinished = false;
 
-let timeLeft = 300;
+let secondsLeft = 300;
 let timerInterval = null;
 
+let usedQuestions = new Set();
 
-// ======================================
-// SHUFFLE QUESTIONS AND OPTIONS
-// ======================================
+
+// ===================================
+// SHUFFLE QUESTIONS
+// ===================================
 
 function shuffleArray(array) {
     const shuffled = [...array];
@@ -523,207 +405,254 @@ function shuffleArray(array) {
         const j = Math.floor(Math.random() * (i + 1));
 
         [shuffled[i], shuffled[j]] =
-            [shuffled[j], shuffled[i]];
+        [shuffled[j], shuffled[i]];
     }
 
     return shuffled;
 }
 
-function getFreshQuestions(category) {
-    // Shuffle the question order.
-    return shuffleArray(questionBank[category]).map(item => {
-        // Shuffle options while keeping the correct answer.
-        const correctOption = item.options[item.answer];
-        const shuffledOptions = shuffleArray(item.options);
 
-        return {
-            question: item.question,
-            options: shuffledOptions,
-            answer: shuffledOptions.indexOf(correctOption)
-        };
-    });
+// ===================================
+// GET NEXT QUESTION
+// ===================================
+
+function getNextQuestion() {
+    const bank = questionBank[currentCategory];
+
+    let available = bank.filter(
+        question => !usedQuestions.has(question.q)
+    );
+
+    // When all questions have been used,
+    // start a new shuffled round.
+    if (available.length === 0) {
+        usedQuestions.clear();
+        round++;
+
+        available = shuffleArray(bank);
+    }
+
+    const question =
+        available[Math.floor(Math.random() * available.length)];
+
+    usedQuestions.add(question.q);
+
+    return question;
 }
 
 
-// ======================================
-// START QUIZ
-// ======================================
+// ===================================
+// START / CHANGE CATEGORY
+// ===================================
 
-function startQuiz(category, newRound = false) {
-    clearInterval(timerInterval);
-
+function startQuiz(category) {
     currentCategory = category;
 
-    if (newRound) {
-        roundNumber++;
-    } else {
-        roundNumber = 1;
-        score = 0;
-        correctCount = 0;
-        wrongCount = 0;
-        totalAnswered = 0;
-    }
+    answered = 0;
+    score = 0;
+    round = 1;
 
-    questions = getFreshQuestions(category);
+    usedQuestions.clear();
 
-    currentIndex = 0;
-    answered = false;
+    selectedAnswer = false;
     quizFinished = false;
-    timeLeft = 300;
 
-    document.querySelectorAll(".category").forEach(button => {
+    secondsLeft = 300;
+
+    clearInterval(timerInterval);
+
+    categoryButtons.forEach(button => {
         button.classList.toggle(
             "active",
             button.dataset.category === category
         );
     });
 
-    scoreDisplay.textContent = score;
-    totalAnsweredEl.textContent = totalAnswered;
+    quizArea.hidden = false;
+    resultArea.hidden = true;
 
-    quizScreen.hidden = false;
-    resultScreen.hidden = true;
+    updateStats();
+    showQuestion();
+    startTimer();
+}
 
-    renderQuestion();
-    updateTimer();
+
+// ===================================
+// SHOW QUESTION
+// ===================================
+
+function showQuestion() {
+    if (quizFinished) return;
+
+    currentQuestion = getNextQuestion();
+
+    selectedAnswer = false;
+
+    feedback.textContent = "";
+    feedback.className = "feedback";
+
+    questionElement.textContent = currentQuestion.q;
+
+    roundLabel.textContent =
+        currentCategory + " • ROUND " + round;
+
+    questionCount.textContent =
+        "QUESTION " + (answered + 1);
+
+    progressBar.style.width =
+        Math.min((answered % 10) * 10, 100) + "%";
+
+    answeredLabel.textContent =
+        answered + " questions answered";
+
+    optionsElement.innerHTML = "";
+
+    nextBtn.disabled = true;
+    nextBtn.textContent = "Next Question →";
+
+    const letters = ["A", "B", "C", "D"];
+
+    currentQuestion.o.forEach((option, index) => {
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className = "option-btn";
+
+        const letter = document.createElement("span");
+        letter.className = "option-letter";
+        letter.textContent = letters[index];
+
+        const text = document.createElement("span");
+        text.textContent = option;
+
+        button.appendChild(letter);
+        button.appendChild(text);
+
+        button.addEventListener("click", () => {
+            selectAnswer(index, button);
+        });
+
+        optionsElement.appendChild(button);
+    });
+}
+
+
+// ===================================
+// SELECT ANSWER
+// ===================================
+
+function selectAnswer(index, clickedButton) {
+    if (selectedAnswer || quizFinished) return;
+
+    selectedAnswer = true;
+
+    const buttons =
+        optionsElement.querySelectorAll(".option-btn");
+
+    buttons.forEach(button => {
+        button.disabled = true;
+    });
+
+    const correctIndex = currentQuestion.a;
+
+    if (index === correctIndex) {
+        score++;
+
+        clickedButton.classList.add("correct");
+
+        feedback.textContent = "✓ Correct answer! Excellent!";
+        feedback.className = "feedback success";
+    } else {
+        clickedButton.classList.add("wrong");
+
+        buttons[correctIndex].classList.add("correct");
+
+        feedback.textContent =
+            "✗ Not quite! The correct answer is " +
+            currentQuestion.o[correctIndex];
+
+        feedback.className = "feedback error";
+    }
+
+    answered++;
+
+    updateStats();
+
+    progressBar.style.width =
+        Math.min((answered % 10) * 10, 100) + "%";
+
+    questionCount.textContent =
+        "QUESTION " + (answered + 1);
+
+    answeredLabel.textContent =
+        answered + " questions answered";
+
+    nextBtn.disabled = false;
+}
+
+
+// ===================================
+// NEXT QUESTION
+// ===================================
+
+nextBtn.addEventListener("click", () => {
+    if (quizFinished) return;
+
+    if (!selectedAnswer) return;
+
+    showQuestion();
+});
+
+
+// ===================================
+// UPDATE SCORE
+// ===================================
+
+function updateStats() {
+    answeredElement.textContent = answered;
+    scoreElement.textContent = score;
+}
+
+
+// ===================================
+// TIMER
+// ===================================
+
+function startTimer() {
+    clearInterval(timerInterval);
+
+    updateTimerDisplay();
 
     timerInterval = setInterval(() => {
-        if (quizFinished) return;
+        if (quizFinished) {
+            clearInterval(timerInterval);
+            return;
+        }
 
-        timeLeft--;
-        updateTimer();
+        secondsLeft--;
 
-        if (timeLeft <= 0) {
+        updateTimerDisplay();
+
+        if (secondsLeft <= 0) {
             finishQuiz(true);
         }
     }, 1000);
 }
 
 
-// ======================================
-// DISPLAY QUESTION
-// ======================================
+function updateTimerDisplay() {
+    const minutes = Math.floor(secondsLeft / 60);
+    const seconds = secondsLeft % 60;
 
-function renderQuestion() {
-    answered = false;
-
-    const current = questions[currentIndex];
-
-    categoryLabelEl.textContent =
-        `${currentCategory.toUpperCase()} • ROUND ${roundNumber}`;
-
-    questionNumberEl.textContent =
-        `QUESTION ${currentIndex + 1}/${questions.length}`;
-
-    questionEl.textContent = current.question;
-
-    progressBar.style.width =
-        `${((currentIndex + 1) / questions.length) * 100}%`;
-
-    answeredCountEl.textContent =
-        `${totalAnswered} questions answered`;
-
-    feedbackEl.textContent = "";
-    nextBtn.disabled = true;
-
-    nextBtn.textContent =
-        currentIndex === questions.length - 1
-            ? "Finish Round →"
-            : "Next Question →";
-
-    optionsEl.replaceChildren();
-
-    current.options.forEach((optionText, index) => {
-        const button = document.createElement("button");
-        button.className = "option";
-
-        const letter = document.createElement("span");
-        letter.className = "option-letter";
-        letter.textContent = String.fromCharCode(65 + index);
-
-        const text = document.createElement("span");
-        text.textContent = optionText;
-
-        button.append(letter, text);
-
-        button.addEventListener("click", () => {
-            selectAnswer(index, button);
-        });
-
-        optionsEl.appendChild(button);
-    });
+    timerElement.textContent =
+        String(minutes).padStart(2, "0") + ":" +
+        String(seconds).padStart(2, "0");
 }
 
 
-// ======================================
-// CHECK ANSWER
-// ======================================
-
-function selectAnswer(selectedIndex, selectedButton) {
-    if (answered || quizFinished) return;
-
-    answered = true;
-    totalAnswered++;
-
-    const correctIndex = questions[currentIndex].answer;
-    const optionButtons = optionsEl.querySelectorAll(".option");
-
-    optionButtons.forEach((button, index) => {
-        button.disabled = true;
-
-        if (index === correctIndex) {
-            button.classList.add("correct");
-        }
-    });
-
-    if (selectedIndex === correctIndex) {
-        score++;
-        correctCount++;
-
-        feedbackEl.textContent =
-            "✓ Correct answer! Excellent work.";
-
-        feedbackEl.style.color = "#159b73";
-    } else {
-        wrongCount++;
-
-        selectedButton.classList.add("wrong");
-
-        feedbackEl.textContent =
-            "✗ Incorrect answer. The correct option is highlighted.";
-
-        feedbackEl.style.color = "#e34e65";
-    }
-
-    scoreDisplay.textContent = score;
-    totalAnsweredEl.textContent = totalAnswered;
-
-    answeredCountEl.textContent =
-        `${totalAnswered} questions answered`;
-
-    nextBtn.disabled = false;
-}
-
-
-// ======================================
-// NEXT QUESTION / INFINITE ROUNDS
-// ======================================
-
-nextBtn.addEventListener("click", () => {
-    if (!answered || quizFinished) return;
-
-    if (currentIndex < questions.length - 1) {
-        currentIndex++;
-        renderQuestion();
-    } else {
-        finishQuiz(false);
-    }
-});
-
-
-// ======================================
-// FINISH ROUND
-// ======================================
+// ===================================
+// FINISH QUIZ
+// ===================================
 
 function finishQuiz(timeUp = false) {
     if (quizFinished) return;
@@ -732,96 +661,74 @@ function finishQuiz(timeUp = false) {
 
     clearInterval(timerInterval);
 
-    quizScreen.hidden = true;
-    resultScreen.hidden = false;
+    quizArea.hidden = true;
+    resultArea.hidden = false;
 
-    const attempted = correctCount + wrongCount;
+    finalScore.textContent = score + " / " + answered;
 
-    const percentage = attempted === 0
-        ? 0
-        : Math.round((correctCount / attempted) * 100);
+    if (timeUp) {
+        resultMessage.textContent =
+            "Time is up! Keep practising to improve your score.";
+    } else if (answered > 0 && score === answered) {
+        resultMessage.textContent =
+            "Perfect score! Amazing work! 🎉";
+    } else if (score > 0) {
+        resultMessage.textContent =
+            "Great effort! Keep learning and try again.";
+    } else {
+        resultMessage.textContent =
+            "Every expert was once a beginner. Try again!";
+    }
 
-    document.getElementById("finalScore").textContent =
-        `${correctCount}/${attempted}`;
-
-    document.getElementById("percentage").textContent =
-        `${percentage}% Accuracy`;
-
-    document.getElementById("correctCount").textContent =
-        correctCount;
-
-    document.getElementById("wrongCount").textContent =
-        wrongCount;
-
-    document.getElementById("resultIcon").textContent =
-        percentage >= 80 ? "🏆" :
-        percentage >= 50 ? "🎯" : "📚";
-
-    document.getElementById("resultTitle").textContent =
-        percentage >= 80 ? "Excellent Work!" :
-        percentage >= 50 ? "Good Effort!" : "Keep Practicing!";
-
-    document.getElementById("resultMessage").textContent =
-        timeUp
-            ? "Time is up! Your final result is ready."
-            : "Round completed! You can continue with fresh questions.";
-
-    timerEl.textContent = timeUp ? "00:00" : timerEl.textContent;
-
-    document.getElementById("restartBtn").textContent =
-        "↻ Start Next Round";
+    progressBar.style.width = "100%";
 }
 
 
-// ======================================
-// CATEGORY BUTTONS
-// ======================================
+// ===================================
+// RESTART
+// ===================================
 
-document.querySelectorAll(".category").forEach(button => {
+restartBtn.addEventListener("click", () => {
+    startQuiz(currentCategory);
+});
+
+
+// ===================================
+// CATEGORY BUTTONS
+// ===================================
+
+categoryButtons.forEach(button => {
     button.addEventListener("click", () => {
-        startQuiz(button.dataset.category);
+        const category = button.dataset.category;
+
+        if (!questionBank[category]) return;
+
+        startQuiz(category);
     });
 });
 
 
-// ======================================
-// START NEXT ROUND
-// ======================================
-
-document.getElementById("restartBtn").addEventListener("click", () => {
-    startQuiz(currentCategory, true);
-});
-
-
-// ======================================
+// ===================================
 // DARK / LIGHT MODE
-// ======================================
+// ===================================
 
-document.getElementById("themeBtn").addEventListener("click", () => {
+themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 
-    const darkMode = document.body.classList.contains("dark");
+    const isDark =
+        document.body.classList.contains("dark");
 
-    document.getElementById("themeBtn").textContent =
-        darkMode ? "☀️" : "🌙";
+    themeBtn.textContent = isDark ? "☀️" : "🌙";
+
+    themeBtn.setAttribute(
+        "aria-label",
+        isDark ? "Switch to light mode" : "Switch to dark mode"
+    );
 });
 
 
-// ======================================
-// TIMER
-// ======================================
-
-function updateTimer() {
-    const minutes = Math.floor(timeLeft / 60);
-    const seconds = timeLeft % 60;
-
-    timerEl.textContent =
-        `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-}
-
-
-// ======================================
-// INITIALIZE APPLICATION
-// ======================================
+// ===================================
+// START APP
+// ===================================
 
 startQuiz("HTML");
